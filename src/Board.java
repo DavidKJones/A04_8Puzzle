@@ -69,7 +69,13 @@ public class Board
 				{
 					//used algebra to find the desired position
 					int goalX = (position - j - 1)/ blocks.length;
-					int goalY = (position - 1)/(i * blocks.length);
+					
+					int goalY = 0;
+					
+					if(i != 0)
+					{
+						goalY = (position - 1)/(i * blocks.length);
+					}
 					
 					count += Math.abs(goalY - i) + Math.abs(goalX - j);
 				}
