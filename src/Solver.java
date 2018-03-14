@@ -65,7 +65,7 @@ public class Solver {
 	
 	// find a solution to the initial board (using the A* algorithm)
     public Solver(Board initial) {
-    	pq = new MinPQ<SearchNode>(byHamming); // This can either be by the hamming method or manhattan method
+    	pq = new MinPQ<SearchNode>(byManhattan); // This can either be by the hamming method or manhattan method
     	pq.insert(new SearchNode(initial, 0, null)); // insert the initial board in the priority queue
     	boolean solved = false;
     	while(!solved) {
@@ -118,6 +118,8 @@ public class Solver {
 	    for (int i = 0; i < N; i++)
 	        for (int j = 0; j < N; j++)
 	            blocks[i][j] = in.readInt();
+	    
+	    long start = System.currentTimeMillis();
 	    Board initial = new Board(blocks);
 
 	    // check if puzzle is solvable; if so, solve it and output solution
@@ -132,5 +134,7 @@ public class Solver {
 	    else {
 	        StdOut.println("Unsolvable puzzle");
 	    }
+	    
+	    StdOut.println((System.currentTimeMillis() - start) / (long)1000);
     }
 }

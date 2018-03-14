@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.StdOut;
  */
 public class Board 
 {
-	private int[][] blocks;
+	private final int[][] blocks;
 	
 	// construct a board from an N-by-N array of blocks
 	// (where blocks[i][j] = block in row i, column j)
@@ -145,7 +145,7 @@ public class Board
 		boolean isEven = blocks.length % 2 == 0;
 		
 		if(isEven)
-			return (blankRow + inversions) % 2 == 3;
+			return (blankRow + inversions) % 2 != 0;
 		else
 			return inversions % 2 == 0;
 
