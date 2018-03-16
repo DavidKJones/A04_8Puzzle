@@ -23,7 +23,6 @@ public class Solver {
         private Board board;
         private int moves;
         private SearchNode prev;
-        private int rank;
         
         public SearchNode(Board board, int moves, SearchNode prev) {
             this.board = board;
@@ -65,7 +64,7 @@ public class Solver {
 	
 	// find a solution to the initial board (using the A* algorithm)
     public Solver(Board initial) {
-    	pq = new MinPQ<SearchNode>(byManhattan); // This can either be by the hamming method or manhattan method
+    	pq = new MinPQ<SearchNode>(byManhattan); //CHANGE THIS TO CHANGE WHICH METHOD IS USED (byManhattan or byHamming)
     	pq.insert(new SearchNode(initial, 0, null)); // insert the initial board in the priority queue
     	boolean solved = false;
     	while(!solved) {
@@ -135,6 +134,6 @@ public class Solver {
 	        StdOut.println("Unsolvable puzzle");
 	    }
 	    
-	    StdOut.println((System.currentTimeMillis() - start) / (long)1000);
+	    StdOut.println((double)(System.currentTimeMillis() - start)/1000);
     }
 }

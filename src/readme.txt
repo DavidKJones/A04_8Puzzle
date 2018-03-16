@@ -29,10 +29,9 @@ Programming Assignment 4: Slider Puzzle
  *  (board + number of moves + previous search node).
  *****************************************************************************/
 
-
-
-
-
+*Created a subclass SearchNode inside of solver.java that keeps track of the count, 
+ current board, and previous search node. We use a minPQ with the searchnodes to keep
+ track of the order.
 
 
 /******************************************************************************
@@ -70,14 +69,14 @@ Order of growth of running time: O(n^2)
                  min number          seconds
      instance     of moves     Hamming     Manhattan
    ------------  ----------   ----------   ----------
-   puzzle28.txt      36                         0
-   puzzle30.txt      40                         3
-   puzzle32.txt      38                        58
-   puzzle34.txt 
-   puzzle36.txt 
-   puzzle38.txt 
-   puzzle40.txt 
-   puzzle42.txt 
+   puzzle28.txt      36         time          0.183
+   puzzle30.txt      40         time          2.461
+   puzzle32.txt      38         time         41.201
+   puzzle34.txt 			    time		  time
+   puzzle36.txt 		        time		  time
+   puzzle38.txt 			    time   		  time
+   puzzle40.txt 			    time		  time
+   puzzle42.txt 			    time		  memory
 
 
 
@@ -95,8 +94,6 @@ Order of growth of running time: O(n^2)
  distance rather than just calculating number of values in the wrong position. 
 
 
-
-
 /******************************************************************************
  *  Known bugs / limitations.
  *****************************************************************************/
@@ -112,12 +109,12 @@ Limitations: The programming can be very inefficient with larger boards.
 
 *We had help from our professor to get a better understanding of A* algorithm.
 
-
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
  *****************************************************************************/
 
-
+*We couldn't complete all of the puzzles above due to running out of memory and
+*time constraints. 
 
 /******************************************************************************
  *  If you worked with a partner, assert below that you followed
@@ -127,8 +124,6 @@ Limitations: The programming can be very inefficient with larger boards.
 
 *David wrote the code for Board.java and Mason wrote the code for Solver.java.
 *We both helped each other when needed and looked over each others code.
-
-
 
 /******************************************************************************
  *  List any other comments here. Feel free to provide any feedback   
